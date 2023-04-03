@@ -1,17 +1,13 @@
-import React from "react";
-import Products from "./pages/Products";
-import Product from "./components/Product";
-import Users from "./pages/Users";
+import React from 'react'
+import Users from './pages/Users'
 
-function App() {
+const App = (): JSX.Element => {
   return (
     <div>
       <h1>React Application</h1>
-      {/* <Products /> */}
-      {/* <Product /> */}
       <Users />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

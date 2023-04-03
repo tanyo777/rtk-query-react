@@ -1,20 +1,15 @@
-import { useGetUsersQuery } from "../api/users";
+import { useGetUsersQuery } from '../api/users'
+import React from 'react'
 
-const Users = () => {
-  let content;
+const Users = (): JSX.Element => {
+  let content
 
-  const {
-    data: users,
-    isLoading,
-    isError,
-    error,
-    isSuccess,
-  } = useGetUsersQuery("");
+  const { data: users, isLoading, isError, isSuccess } = useGetUsersQuery('')
 
   if (isLoading) {
-    content = <h2>Loading...</h2>;
+    content = <h2>Loading...</h2>
   } else if (isError) {
-    content = <h2>Cannot fetch users!</h2>;
+    content = <h2>Cannot fetch users!</h2>
   } else if (isSuccess) {
     content = users.users.map((user: any) => {
       return (
@@ -23,11 +18,11 @@ const Users = () => {
             {user.firstName} {user.lastName}
           </h3>
         </div>
-      );
-    });
+      )
+    })
   }
 
-  return <div>{content}</div>;
-};
+  return <div>{content}</div>
+}
 
-export default Users;
+export default Users

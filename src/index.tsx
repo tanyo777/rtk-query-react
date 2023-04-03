@@ -1,21 +1,23 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import { ApiProvider } from '@reduxjs/toolkit/dist/query/react'
 
-import reportWebVitals from "./reportWebVitals";
-import App from "./App";
-import { apiSlice } from "./api/apiSlice";
+import reportWebVitals from './reportWebVitals'
+import App from './App'
+import { apiSlice } from './api/apiSlice'
 
-const container = document.getElementById("root")!;
-const root = createRoot(container);
+const container = document.getElementById('root')
 
-root.render(
-  <ApiProvider api={apiSlice}>
-    <App />
-  </ApiProvider>
-);
+if (container !== null) {
+  const root = createRoot(container)
+  root.render(
+    <ApiProvider api={apiSlice}>
+      <App />
+    </ApiProvider>
+  )
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+reportWebVitals()

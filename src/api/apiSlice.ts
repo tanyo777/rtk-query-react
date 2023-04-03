@@ -1,17 +1,17 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const apiSlice = createApi({
-  reducerPath: "apiSlice",
+  reducerPath: 'apiSlice',
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://dummyjson.com/",
+    baseUrl: 'https://dummyjson.com/'
   }),
-  tagTypes: ["Post", "Get", "Products"],
+  tagTypes: ['Post', 'Get', 'Products'],
   endpoints: (builder) => ({
     getProducts: builder.query({
-      query: () => "/products",
+      query: () => '/products'
     }),
     getProduct: builder.query({
-      query: (args) => `/product/${args.id}`,
-    }),
-  }),
-});
-export const { useGetProductsQuery, useGetProductQuery } = apiSlice;
+      query: (args: { id: number }) => `/product/${args.id}`
+    })
+  })
+})
+export const { useGetProductsQuery, useGetProductQuery } = apiSlice

@@ -1,14 +1,14 @@
-import { apiSlice } from "./apiSlice";
+import { apiSlice } from './apiSlice'
 
 export const extendedApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getUsers: builder.query({
-      query: () => "/users",
+      query: () => '/users'
     }),
     getUser: builder.query({
-      query: (args) => `/users/${args.id}`,
-    }),
+      query: (args: { id: number }) => `/users/${args.id}`
+    })
   }),
-  overrideExisting: false,
-});
-export const { useGetUserQuery, useGetUsersQuery } = extendedApi;
+  overrideExisting: false
+})
+export const { useGetUserQuery, useGetUsersQuery } = extendedApi
