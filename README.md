@@ -4,7 +4,14 @@
 
 - https://dev.to/knowankit/setup-eslint-and-prettier-in-react-app-357b
 
-- eslint (static code analysis tool for identifying problematic patterns found in JavaScript code, code smells, unused variables, etc..)
+- eslint (already installed/shipped with create-react-app, ESLint is used as static code analysis tool for identifying problematic patterns found in JavaScript code, code smells, unused variables, etc..)
+
 - prettier (code formatter)
+
 - eslint-plugin-prettier (runs prettier as eslint rule)
-- eslint-config-prettier (turn off all rules that are unnecessary or might conflict with [Prettier])
+
+- eslint-config-prettier (turn off all ESLint styling rules that are unnecessary or might conflict with [Prettier])
+
+- eslint-plugin-react (plugin for eslint to follow some best react practices, already shipped with create-react-app)
+
+- eslint-plugin-react-hooks (add eslint rules for hooks, this plugin also comes in with create-react-app)

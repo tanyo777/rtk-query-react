@@ -7,7 +7,9 @@
   "extends": [
     "plugin:react/recommended",
     "standard-with-typescript",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "react-app",
+    "react-app/jest"
   ],
   "overrides": [],
   "parserOptions": {
