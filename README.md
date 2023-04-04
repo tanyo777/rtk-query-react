@@ -55,6 +55,8 @@ setupListeners(store.dispatch)
 
 # RTK Query endpoints and Mutation ednpoints
 
+- https://blog.openreplay.com/fetching-data-in-redux-using-rtk-query/
+
 Query endpoints: They are endpoints for requests that retrieve data. Meaning for reading data from the server, we use queries.
 
 Mutation endpoints: As opposed to queries, mutations endpoints are used for creating, updating, and deleting data.
