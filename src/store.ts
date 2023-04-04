@@ -10,6 +10,8 @@ export const store = configureStore({
     [productsApi.reducerPath]: productsApi.reducer,
     [usersApi.reducerPath]: usersApi.reducer
   },
+
+  // the default middlewares are: thunk, immutability check and Serializability check middleware
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(productsApi.middleware).concat(usersApi.middleware)
 })
