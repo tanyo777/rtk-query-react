@@ -1,19 +1,22 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { ApiProvider } from '@reduxjs/toolkit/dist/query/react'
+import { BrowserRouter } from 'react-router-dom'
 
+import { store } from './store'
 import reportWebVitals from './reportWebVitals'
 import App from './App'
-import { apiSlice } from './api/apiSlice'
+import { Provider } from 'react-redux'
 
 const container = document.getElementById('root')
 
 if (container !== null) {
   const root = createRoot(container)
   root.render(
-    <ApiProvider api={apiSlice}>
-      <App />
-    </ApiProvider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   )
 }
 

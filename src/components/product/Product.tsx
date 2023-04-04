@@ -1,4 +1,4 @@
-import { useGetProductQuery } from '../api/apiSlice'
+import { useGetProductQuery } from '../../api/productsApi'
 import React from 'react'
 
 const Product = (): JSX.Element => {

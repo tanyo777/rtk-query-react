@@ -26,3 +26,29 @@ When we create react app with create-react-app we should only install:
   And two scripts:
 - "lint": "eslint .",
 - "lint:fix": "eslint . --fix" (will use the prettier styling guide)
+
+# RTK Query + Slices
+
+We can create one rtk query api or inject endpoints to already existing (extend it).
+Or we can create several rtk query api's and add them to the store.
+With the rtk query api slices we can also create our own slices.
+
+Example of store with 2 api's and our own slice:
+
+```
+export const store = configureStore({
+  reducer: {
+    theme: themeSlice.reducer, // our own slice
+    [productsApi.reducerPath]: productsApi.reducer, // api for the products endpoints (RTK Query)
+    [usersApi.reducerPath]: usersApi.reducer // api for the users endpoints (RTK Query)
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(apiSlice.middleware).concat(usersApi.middleware)
+})
+setupListeners(store.dispatch)
+
+
+<Provider store={store}>
+  <App/>
+<Provider/>
+```

@@ -1,10 +1,10 @@
-import { useGetUsersQuery } from '../api/users'
+import { useGetUsersQuery } from '../../api/usersApi'
 import React from 'react'
 
 const Users = (): JSX.Element => {
   let content
 
-  const { data: users, isLoading, isError, isSuccess } = useGetUsersQuery('')
+  const { data: users, isLoading, isError, isSuccess } = useGetUsersQuery()
 
   if (isLoading) {
     content = <h2>Loading...</h2>

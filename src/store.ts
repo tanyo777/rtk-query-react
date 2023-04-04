@@ -1,11 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
-import { apiSlice } from './api/apiSlice'
+import { productsApi } from './api/productsApi'
+import { themeSlice } from './slices/themeSlice'
+import { usersApi } from './api/usersApi'
 
 export const store = configureStore({
   reducer: {
-    [apiSlice.reducerPath]: apiSlice.reducer
+    theme: themeSlice.reducer,
+    [productsApi.reducerPath]: productsApi.reducer,
+    [usersApi.reducerPath]: usersApi.reducer
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware)
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(productsApi.middleware).concat(usersApi.middleware)
 })
 setupListeners(store.dispatch)
