@@ -25,13 +25,6 @@ export const themeSlice = createSlice({
       }
     }
   }
-
-  //   add extra side effect on api calls
-  //   extraReducers(builder) {
-  //     builder.addMatcher(apiSlice.endpoints.getProducts.matchFulfilled, (state) => {
-  //       state.themeColor = ThemeColor.DARK
-  //     })
-  //   }
 })
 
 export const { toggleTheme } = themeSlice.actions
